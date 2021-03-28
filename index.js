@@ -28,7 +28,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 // define a root route
 app.get('/', (req, res) => {
-  res.send("Hello Worlddddddddddddddddddddddddddddddddddddddddddddddddddddddddd");
+  res.send("Hello World");
 });
 
 app.use(cors());
