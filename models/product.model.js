@@ -1,8 +1,15 @@
 'use strict';
+/*
+Archivo que nos permite conectarnos a la bd y realizar las consultas según lo solicitado.
+*/
+
+//Instanciamos la conexión a la nd
 var dbConn = require('../config/db.config');
 
+//Query a ajecutar
 var query = "";
 
+//Definimos el modelo Product
 var Product = function(product){
     this.id = product.id;
     this.name = product.name;
@@ -13,6 +20,7 @@ var Product = function(product){
     this.cat_name = product.cat_name;
 };
 
+//Método que retorna la data de productos según filtros explicados en el route/product.router.js
 Product.findById = function (parameters, result) {
 
     let strSelect =  `select p.id, p.name, p.url_image, p.price, p.discount, p.category, c.name as cat_name ` +
